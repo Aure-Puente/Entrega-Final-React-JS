@@ -1,3 +1,4 @@
+//Importaciones
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,8 +13,8 @@ import MenuItem from '@mui/material/MenuItem';
 import { CartWidget } from '../../common/cartWidget/CartWidget';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 
-
-const pages = ['Eléctricas', 'Acústicas', 'Electroacústicas'];
+//Utilizamos una Navbar desde la libreria de Material UI:
+const pages = ['Eléctricas', 'Acústicas', 'Electroacústicas']; //Catergorias clickleables
 
 function Navbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -30,7 +31,7 @@ function Navbar() {
         <AppBar position="static">
         <Container maxWidth="xl">
             <Toolbar disableGutters>
-            <QueueMusicIcon
+            <QueueMusicIcon //Traemos un logo musical desde la libreria de Material UI 
                 color="secondary"
                 sx={{display: { xs: 'none', md: 'flex' }, mr: 1,}}/>
             <Typography
@@ -48,7 +49,7 @@ function Navbar() {
                 textDecoration: 'none',
                 }}
             >
-                GUITAR SHOP
+                GUITAR SHOP {/*Titulo de la e-commerce*/}
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -77,7 +78,7 @@ function Navbar() {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                    display: { xs: 'block', md: 'none' },
+                    display: { xs: 'block', md: 'none' }
                 }}
                 >
                 {pages.map((page) => (
@@ -87,7 +88,8 @@ function Navbar() {
                 ))}
                 </Menu>
             </Box>
-            <QueueMusicIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+            <QueueMusicIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
+                color="secondary" />
             <Typography
                 variant="h5"
                 noWrap

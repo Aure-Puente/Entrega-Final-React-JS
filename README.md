@@ -1,8 +1,7 @@
-# React + Vite
+# Primera pre-entrega
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+------------
+### Buenas! Para la primera pre-entrega realicé una E-Commerce de instrumentos musicales, en este caso de guitarras específicamente. Detallé en los comentarios algunos de los pasos de las consignas.
+------------
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Muchas gracias por la corrección !

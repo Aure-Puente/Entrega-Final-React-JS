@@ -1,7 +1,8 @@
+//Importacion:
 import "../itemListContainer/ItemListContainer.css"
 
-export const ItemListContainer = (props) => {
-    const {greetings} = props    
+//Utilizamos las props para recibir el saludo de bienvenida
+export const ItemListContainer = ({greetings}) => {    
     return (
         <div>
             <h3 className="saludo">{greetings}</h3>
