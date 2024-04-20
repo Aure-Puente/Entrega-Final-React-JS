@@ -1,8 +1,9 @@
-//Importaciones
+//Importaciones:
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Box, Badge } from "@mui/material"
 
-//Utilizamos los iconos del carrito con el badge desde la libreria de Material UI
+
+//JSX:
 export const CartWidget = () => {
     return (
         <Box>
