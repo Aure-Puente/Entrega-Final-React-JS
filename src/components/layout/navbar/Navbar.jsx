@@ -14,7 +14,7 @@ const Navbar = () => {
             <Link to="/">            
                 <QueueMusicIcon fontSize='large' color="secondary"sx={{display: { xs: 'none', md: 'flex' }, mr: 1,}}/>
             </Link>
-            <Link to="/"><h2>GUITAR SHOP</h2></Link>
+            <Link to="/"><h1>GUITAR SHOP</h1></Link>
             </div>
             <ul className='navbar'>
                 <Link to="/">TODAS</Link>
