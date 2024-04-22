@@ -12,6 +12,9 @@
     a{
         color: #f8ff86;
         text-decoration: none;
+        font-size: 1.5625rem;
+    }:hover{
+        text-decoration:underline;
     }
 }
 
@@ -19,10 +22,13 @@
     display: flex;
     gap: 3.125rem;
     a{
-        color: white;
+        color: #e7e7e7;
         list-style: none;
-        font-size: 1.25rem;
+        font-size: 1.4375rem;
         text-decoration: none;
+    }:hover{
+        transform: scale(1.2);
+        color: #f8ff86;
     }
 }
 

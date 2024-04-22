@@ -1,0 +1,35 @@
+.detail-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #3d3d3d;
+    border-top: .125rem #f8ff86;
+    border-style: double;
+    padding: 2.5rem;
+    padding-left: 9.375rem;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e7e7e7;
+    gap: 1.5625rem;
+    padding-left: 12.5rem;
+    padding-right: 12.5rem;
+}h2{
+    font-size: 2.5rem;
+    text-decoration: underline;
+}h3{
+    font-size: 1.5625rem;
+}h4{
+    font-size: 1.875rem;
+}button{
+    font-size: 1.5625rem;
+    background-color: #f8ff86;
+    padding: .5rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 6.25rem;
+    cursor: pointer;
+    color: #262626;
+}

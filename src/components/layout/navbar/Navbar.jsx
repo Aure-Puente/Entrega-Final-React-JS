@@ -6,12 +6,13 @@ import "../navbar/Navbar.css"
 
 
 //JSX:
+//Usamos "Link" para declarar las direcciones correspondientes a cada elemento del Navbar. 
 const Navbar = () => {
     return (
         <div className='navbar-container'>
             <div className='logo'>
             <Link to="/">            
-                <QueueMusicIcon color="secondary"sx={{display: { xs: 'none', md: 'flex' }, mr: 1,}}/>
+                <QueueMusicIcon fontSize='large' color="secondary"sx={{display: { xs: 'none', md: 'flex' }, mr: 1,}}/>
             </Link>
             <Link to="/"><h2>GUITAR SHOP</h2></Link>
             </div>
@@ -21,7 +22,7 @@ const Navbar = () => {
                 <Link to="category/eléctricas">Eléctricas</Link>
                 <Link to="category/electroacústicas">Electroacústicas</Link>
             </ul>
-            <Link to="/" className='cart'><CartWidget /></Link>
+            <Link to="/cart" className='cart'><CartWidget /></Link>
         </div>
     )
 }

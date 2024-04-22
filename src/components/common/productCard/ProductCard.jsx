@@ -9,28 +9,31 @@ import { Link } from 'react-router-dom';
 
 
 //JSX:
+//Usamos para realizar la Card un ejemplo de Material UI. Las props Llegan desde ItemList.jsx
 const ProductCard = ({title, description, price, img, id}) => {
     return (
-        <Card sx={{ maxWidth: 345, height: 550, display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
+        <Card sx={{ maxWidth: 345, height: 500, display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
             <CardMedia
                 sx={{ height: 300, backgroundSize: "contain" }}
                 image={img}
-                title="green iguana"
+                title="guitarra"
             />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+            <CardContent
+            sx={{backgroundColor: "#6d6d6d"}}>
+                <Typography gutterBottom variant="h5" component="div" sx={{color: "#262626"}}>
                     {title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="#f6f6f6" fontSize={"15px"}>
                     {description}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="#f6f6f6" fontSize={"20px"}>
                     $ {price}.-
                 </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions
+            sx={{backgroundColor: "#5d5d5d"}}>
                 <Link to={`/itemDetail/${id}`}>
-                    <Button size="small">Detalles</Button>
+                    <Button size="small"sx={{ color:"#f8ff86"}} >Detalles</Button>
                 </Link>
             </CardActions>
         </Card>

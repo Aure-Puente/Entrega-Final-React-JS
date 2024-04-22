@@ -1,33 +1,22 @@
 //Importaciones:
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import "../itemDetail/ItemDetailContainer.css"
 
 
 //JSX:
+//Llega la informacion desde ItemDetailContainer.jsx y la usamos para pintarla en pantalla.
 const ItemDetail = ({item}) => {
     return (
-        (
-            <Card sx={{ maxWidth: 345, height: 550, display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
-                <CardMedia
-                    sx={{ height: 300, backgroundSize: "contain" }}
-                    image={item.img}
-                    title="green iguana"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {item.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {item.description}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        $ {item.price}.-
-                    </Typography>
-                </CardContent>
-            </Card>
-        )
+        <div className='detail-container'>
+            <div>
+                <img src={item.img} alt="guitarra" />
+            </div>
+            <div className="details">
+                <h2>{item.title}</h2>
+                <h3>{item.description}</h3>
+                <h4>Precio: $ {item.price}-.</h4>
+                <button>Agregar al Carrito</button>
+            </div>
+        </div>
     )
 }
 

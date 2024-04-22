@@ -1,0 +1,11 @@
+.cart-container{
+    background-color: #3d3d3d;
+    border-top: .125rem #f8ff86;
+    border-style: double;
+    height: 37.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}h2{
+    color: #e7e7e7;
+}

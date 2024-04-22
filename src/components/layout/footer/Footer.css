@@ -1,0 +1,30 @@
+.footer{
+    padding: 1.25rem;
+    background-color: #3d3d3d;
+    border-top: .125rem #f8ff86;
+    border-style: double;
+}
+
+.logos{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1.5625rem;
+}
+
+.logofooter{
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5625rem;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    padding: 1.5625rem;
+    gap: 12.5rem;
+}a{
+    color: #e7e7e7;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+

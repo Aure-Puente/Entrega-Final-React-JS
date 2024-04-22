@@ -8,7 +8,7 @@ export const CartWidget = () => {
     return (
         <Box>
             <Badge badgeContent={1} color="secondary">
-                <ShoppingCartIcon fontSize='large' />
+                <ShoppingCartIcon fontSize='large' sx={{color: "#e7e7e7"}} />
             </Badge>
         </Box>
     )
