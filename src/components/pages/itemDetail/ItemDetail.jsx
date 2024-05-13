@@ -1,9 +1,10 @@
 //Importaciones:
+import { CounterContainer } from "../../common/counter/CounterContainer"
 import "../itemDetail/ItemDetailContainer.css"
 
 
 //JSX:
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item, onAdd}) => {
     return (
         <div className='detail-container'>
             <div>
@@ -13,7 +14,7 @@ const ItemDetail = ({item}) => {
                 <h2>{item.title}</h2>
                 <h3>{item.description}</h3>
                 <h4>Precio: $ {item.price}-.</h4>
-                <button>Agregar al Carrito</button>
+                <CounterContainer stock={item.stock} onAdd={onAdd}/>
             </div>
         </div>
     )

@@ -65,7 +65,7 @@ const CartContextProvider = ({children}) =>{
     }
 
     //Variable que contiene toda la información del contexto:
-    let data = {cart, addToCart, clearCart, deleteById, isInCart ,getQuantityById, getTotalPrice, getTotalItems}
+    let data = {cart, addToCart, clearCart, deleteById, getQuantityById, getTotalPrice, getTotalItems}
 
     return <CartContext.Provider value={data}>{children}</CartContext.Provider>
 }

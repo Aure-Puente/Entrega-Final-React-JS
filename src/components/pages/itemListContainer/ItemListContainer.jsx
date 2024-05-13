@@ -1,31 +1,32 @@
 //Importaciones:
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList.jsx"
-import { products } from "../../../productsMock.js"
 import { useParams } from "react-router-dom"
+import { db } from "../../../firebaseConfig.js"
+import { collection, getDocs, query, where } from "firebase/firestore"
 
 //Lógica:
 const ItemListContainer = () => {
-    const [error, setError] = useState(null)
     const [items, setItems] = useState([])
     const {name} = useParams()
 
     useEffect(()=>{
-        let productsFiltered = products.filter(product => product.category === name)
-        const getProducts = new Promise ((resolve, reject)=>{
-            let x = true
-            if(x){
-                resolve(name ? productsFiltered : products)
-            }else{
-                reject({status: 400, message: "Algo salio mal"})
-            }
+        const productsCollection = collection(db, "products")
+        let consulta = productsCollection
+        if(name){
+            consulta = query(productsCollection, where("category", "==", name))
+        }
+        getDocs(consulta).then((res)=>{
+            let newArray = res.docs.map((doc)=>{
+                return {id: doc.id, ...doc.data()}
+            })
+            setItems(newArray)
         })
-        getProducts.then((res)=>setItems(res)).catch((error)=>setError(error))
     },[name])
 
 //JSX:
     return (
-        <ItemList items= {items} error={error}/>
+        <ItemList items= {items}/>
     )
 }
 
