@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 
 
 //JSX:
-//Usamos para realizar la Card un ejemplo de Material UI. Las props Llegan desde ItemList.jsx
 const ProductCard = ({title, description, price, img, id}) => {
     return (
         <Card sx={{ maxWidth: 345, height: 500, display: "flex", flexDirection: "column", justifyContent: "space-around"}}>

@@ -1,14 +1,13 @@
 //Importaciones:
+import { useContext } from "react"
 import Cart from "./Cart.jsx"
+import { CartContext } from "../../../context/CartContext.jsx"
 
 
 //Lógica:
-/*Declaramos una variable con un array vacio que luego se irá llenando con los productos seleccionados
-para la compra. Pasamos la informacion de los productos al presentacional a traves de props.*/
 const CartContainer = () => {
-    let productosAgregados = []
-
-    return <Cart productosAgregados = {productosAgregados} />
+    const {cart, clearCart, deleteById} = useContext(CartContext)
+    return <Cart cart={cart} clearCart={clearCart} deleteById={deleteById} />
 }
 
 export default CartContainer

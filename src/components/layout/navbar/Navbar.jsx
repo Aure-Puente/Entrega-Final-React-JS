@@ -6,7 +6,6 @@ import "../navbar/Navbar.css"
 
 
 //JSX:
-//Usamos "Link" para declarar las direcciones correspondientes a cada elemento del Navbar. 
 const Navbar = () => {
     return (
         <div className='navbar-container'>

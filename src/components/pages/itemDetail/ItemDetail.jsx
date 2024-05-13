@@ -3,7 +3,6 @@ import "../itemDetail/ItemDetailContainer.css"
 
 
 //JSX:
-//Llega la informacion desde ItemDetailContainer.jsx y la usamos para pintarla en pantalla.
 const ItemDetail = ({item}) => {
     return (
         <div className='detail-container'>
