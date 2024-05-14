@@ -7,6 +7,7 @@ import { Layout } from "./components/layout/Layout.jsx"
 import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContainer.jsx"
 import CartContainer from "./components/pages/cart/CartContainer.jsx"
 import CartContextProvider from "./context/CartContext.jsx"
+import CheckoutContainer from "./components/pages/checkout/CheckoutContainer.jsx"
 
 
 //JSX:
@@ -21,6 +22,7 @@ function App() {
             <Route path="/category/:name" element={<ItemListContainer />} />
             <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartContainer />} />
+            <Route path="/checkout" element={<CheckoutContainer />} />
           </Route>
         </Routes>
       </BrowserRouter>
