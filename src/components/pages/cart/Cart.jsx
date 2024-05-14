@@ -15,16 +15,18 @@ const Cart = ({cart, clearCart, deleteById, total}) => {
                 <div key={product.id} className="items">
                     <div className="title-img">
                         <div className="cart-img"><img className="miniatura" src={product.img} alt="guitarras" /></div>
-                        <h4>{product.title}</h4>
+                        <h4 className="product-title">{product.title}</h4>
                     </div>
-                    <h5>Unidades: {product.quantity}</h5>
-                    <h5>Precio por unidad: $ {product.price}</h5>
+                    <div>
+                        <h5>Unidades: {product.quantity}</h5>
+                        <h5>Precio por unidad: $ {product.price}</h5>
+                    </div>
                     <Button color="secondary" variant="outlined" size="small" startIcon={<DeleteIcon />}
                         onClick={()=>deleteById(product.id)}>Eliminar</Button>
                 </div>
             ))}
             <div className="total-container">
-                <h3 className="total">El Total es $ {total}-.</h3>
+                <h3 className="total">Total: $ {total}-.</h3>
                 <div className="buttons">
                     <Button color="secondary" variant="outlined" startIcon={<DeleteIcon />}
                         onClick={clearCart}>Cancelar Compra</Button>

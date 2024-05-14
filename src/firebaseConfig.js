@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDhTzQYURy79RYDSbQDQgkRpflwbHY-Mgw",
-    authDomain: "guitar-shop-1935b.firebaseapp.com",
-    projectId: "guitar-shop-1935b",
-    storageBucket: "guitar-shop-1935b.appspot.com",
-    messagingSenderId: "756772750024",
-    appId: "1:756772750024:web:cf9675c533c82854315bfd"
+    apiKey:import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);

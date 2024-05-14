@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 //JSX:
 const ProductCard = ({title, description, price, img, id}) => {
     return (
-        <Card sx={{ maxWidth: 345, height: 550, display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
+        <Card sx={{ maxWidth: 345, height: 550, display: "flex", flexDirection: "column", justifyContent: "space-around", border: "#f8ff86", borderStyle: 'inset'}}>
             <CardMedia
                 sx={{ height: 300, backgroundSize: "contain" }}
                 image={img}

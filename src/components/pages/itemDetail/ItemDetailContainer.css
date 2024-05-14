@@ -7,6 +7,9 @@
     border-style: double;
     padding: 2.5rem;
     padding-left: 9.375rem;
+}img{
+    border: #f8ff86;
+    border-style: inset;
 }
 
 .details{
