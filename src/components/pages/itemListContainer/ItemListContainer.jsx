@@ -24,7 +24,6 @@ const ItemListContainer = () => {
         })
     },[name])
 
-//JSX:
     return (
         <ItemList items= {items}/>
     )

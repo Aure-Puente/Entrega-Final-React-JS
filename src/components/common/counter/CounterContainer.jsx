@@ -27,6 +27,5 @@ export const CounterContainer = ({stock, initial=1, onAdd}) => {
         restar, sumar, contador, onAdd
     }
 
-    //JSX:
     return <Counter {...objectProps} />
 }

@@ -1,11 +1,9 @@
 //Importaciones:
-import { useFormik } from "formik"
-import * as Yup from "yup"
-import Checkout from "./Checkout"
 import { useContext, useState } from "react"
-import { CartContext } from "../../../context/CartContext"
-import { addDoc, collection, updateDoc } from "firebase/firestore"
-import { db } from "../../../firebaseConfig"
+import { CartContext } from "../../../context/CartContext.jsx"
+import { db } from "../../../firebaseConfig.js"
+import { addDoc, collection, updateDoc, doc } from "firebase/firestore"
+import Checkout from "./Checkout.jsx"
 
 
 //Lógica:
@@ -13,29 +11,41 @@ const CheckoutContainer = () => {
 
     const {cart, getTotalPrice, clearCart} = useContext(CartContext)
     const [orderId, setOrderId] = useState(null)
+
     let total = getTotalPrice()
 
-
-    const {handleChange, handleSumbit, errors} = useFormik({
-        initialValues: {name: "", email: "", phone: ""},
-        onSubmit:()=>{
-            let obj = {
-
-            }
-        },
-        validationSchema: Yup.object({
-            nombre: Yup.string().required("Este campo es obligatorio"),
-            email: Yup.string().email("El email es inválido").required("Este campo es obligatorio"),
-            phone: Yup.number().required("Este campo es obligatorio")
-            
-        }),
-        validateOnChange: false
+    const [info, setInfo] = useState({
+        name: "",
+        phone: "",
+        email: ""
     })
 
+    const handleChange = (event)=>{
+        let {name, value} = event.target
+        setInfo({...info, [name]: value})
+    }
 
+    const handleSumbit = (event)=>{
+        event.preventDefault()
+        let obj ={
+            buyer: info,
+            items: cart,
+            total: total
+        }
 
+        let ordersCollection = collection(db, "orders")
+        addDoc(ordersCollection, obj).then((res)=>setOrderId(res.id))
 
-    return <Checkout handleChange={handleChange} handleSumbit={handleSumbit} errors={errors} />
+        cart.forEach((product)=>{
+            let refDoc = doc(db, "products", product.id)
+            updateDoc(refDoc, {stock: product.stock - product.quantity})
+        })
+        clearCart()
+    }
+
+return (
+    <Checkout handleSubmit={handleSumbit} handleChange={handleChange} orderId={orderId} />
+)
 }
 
 export default CheckoutContainer

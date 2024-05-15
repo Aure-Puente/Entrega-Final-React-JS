@@ -1,5 +1,5 @@
 //Importaciones:
-import { CounterContainer } from "../../common/counter/CounterContainer"
+import { CounterContainer } from "../../common/counter/CounterContainer.jsx"
 import "../itemDetail/ItemDetailContainer.css"
 
 

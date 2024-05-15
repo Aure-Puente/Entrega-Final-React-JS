@@ -30,7 +30,7 @@ const Cart = ({cart, clearCart, deleteById, total}) => {
                 <div className="buttons">
                     <Button color="secondary" variant="outlined" startIcon={<DeleteIcon />}
                         onClick={clearCart}>Cancelar Compra</Button>
-                    {cart.length > 0 &&(<Link to="/checkout" ><Button color="secondary" variant="contained" startIcon={<ShoppingBagIcon style={{ color: '#3d3d3d' }}/>} >Realizar Compra</Button></Link>)}
+                    {cart.length > 0 &&(<Link to="/checkout" ><Button color="secondary" variant="contained" endIcon={<ShoppingBagIcon style={{ color: '#3d3d3d' }}/>} >Realizar Compra</Button></Link>)}
                 </div>
             </div>
         </div>

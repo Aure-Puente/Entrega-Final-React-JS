@@ -26,7 +26,6 @@ const ItemDetailContainer = () => {
         addToCart(product)
     }
 
-    //JSX:
     return <ItemDetail item={item} onAdd={onAdd} />
 }
 
