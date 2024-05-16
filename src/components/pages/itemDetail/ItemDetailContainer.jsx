@@ -5,6 +5,7 @@ import ItemDetail from "./ItemDetail.jsx"
 import { CartContext } from "../../../context/CartContext.jsx"
 import { db } from "../../../firebaseConfig.js"
 import { collection, doc, getDoc } from "firebase/firestore"
+import { BeatLoader } from "react-spinners"
 
 
 //Lógica:
@@ -26,7 +27,15 @@ const ItemDetailContainer = () => {
         addToCart(product)
     }
 
-    return <ItemDetail item={item} onAdd={onAdd} />
+    if(Object.keys(item).length === 0){
+        return <div className="loader">
+                    <BeatLoader 
+                        color="#f8ff86"
+                        size={25}/>
+        </div>
+    }else{
+        return <ItemDetail item={item} onAdd={onAdd} />
+    }
 }
 
 export default ItemDetailContainer

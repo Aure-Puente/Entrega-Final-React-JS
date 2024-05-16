@@ -4,6 +4,8 @@ import ItemList from "./ItemList.jsx"
 import { useParams } from "react-router-dom"
 import { db } from "../../../firebaseConfig.js"
 import { collection, getDocs, query, where } from "firebase/firestore"
+import { Skeleton } from "@mui/material"
+
 
 //Lógica:
 const ItemListContainer = () => {
@@ -20,13 +22,149 @@ const ItemListContainer = () => {
             let newArray = res.docs.map((doc)=>{
                 return {id: doc.id, ...doc.data()}
             })
-            setItems(newArray)
+                setItems(newArray)
         })
     },[name])
 
-    return (
+    if(items.length ===0){
+        return (
+            <div className="loading">
+                <div className="skeleton">
+                    <Skeleton 
+                        variant="rectangular"
+                        sx={{fontSize: "1rem"}}
+                        height={250}
+                        width={345} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "1rem"}}
+                        height={55}
+                        width={300}/>
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={100} />
+                </div>
+                <div className="skeleton">
+                    <Skeleton 
+                        variant="rectangular"
+                        sx={{fontSize: "1rem"}}
+                        height={250}
+                        width={345} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "1rem"}}
+                        height={55}
+                        width={300}/>
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={100} />
+                </div>
+                <div className="skeleton">
+                    <Skeleton 
+                        variant="rectangular"
+                        sx={{fontSize: "1rem"}}
+                        height={250}
+                        width={345} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "1rem"}}
+                        height={55}
+                        width={300}/>
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={100} />
+                </div>
+                <div className="skeleton">
+                    <Skeleton 
+                        variant="rectangular"
+                        sx={{fontSize: "1rem"}}
+                        height={250}
+                        width={345} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "1rem"}}
+                        height={55}
+                        width={300}/>
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={280} />
+                    <Skeleton 
+                        variant="text"
+                        sx={{fontSize: "0.5"}}
+                        height={30}
+                        width={100} />
+                </div>
+            </div>
+        )
+    }else{
+            return (
         <ItemList items= {items}/>
     )
+    }
+
 }
 
 export default ItemListContainer

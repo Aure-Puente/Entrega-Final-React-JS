@@ -7,6 +7,7 @@
     border-style: double;
     padding: 2.5rem;
     padding-left: 9.375rem;
+    height: 39.6875rem;
 }img{
     border: #f8ff86;
     border-style: inset;
@@ -27,4 +28,14 @@
     font-size: 1.5625rem;
 }h4{
     font-size: 1.875rem;
+}
+
+.loader{
+    background-color: #3d3d3d;
+    height: 39.6875rem;
+    border-top: .125rem #f8ff86;
+    border-style: double;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
