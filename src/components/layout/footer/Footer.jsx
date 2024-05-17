@@ -7,7 +7,6 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import XIcon from '@mui/icons-material/X';
 import MailIcon from '@mui/icons-material/Mail';
 import CallIcon from '@mui/icons-material/Call';
-import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 
 
 //JSX:
@@ -15,19 +14,19 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="logos">
-                <Link to= "/"><FacebookIcon fontSize='large' color="secondary"/></Link>
-                <Link to= "/"><InstagramIcon fontSize='large' color="secondary"/></Link>
-                <Link to= "/"><YouTubeIcon fontSize='large' color="secondary"/></Link>
-                <Link to= "/"><XIcon fontSize='large' color="secondary"/></Link>
-                <Link to= "/"><MailIcon fontSize='large' color="secondary"/></Link>
-                <Link to= "/"><CallIcon fontSize='large' color="secondary"/></Link>
+                <Link to= "/" className="social"><FacebookIcon fontSize='large' color="secondary"/></Link>
+                <Link to= "/" className="social"><InstagramIcon fontSize='large' color="secondary"/></Link>
+                <Link to= "/" className="social"><YouTubeIcon fontSize='large' color="secondary"/></Link>
+                <Link to= "/" className="social"><XIcon fontSize='large' color="secondary"/></Link>
+                <Link to= "/" className="social"><MailIcon fontSize='large' color="secondary"/></Link>
+                <Link to= "/" className="social"><CallIcon fontSize='large' color="secondary"/></Link>
             </div>
             <div className="logofooter">
-                <Link><QueueMusicIcon fontSize='large' color="secondary"/></Link>
+                <h3 className="siglas fugaz-one-regular">GS</h3>
             </div>
             <div className="links">
-                <Link to="/">Información Legal</Link>
-                <Link to="/">Política de privacidad</Link>
+                <Link to="/"className="legal roboto-regular">Información Legal</Link>
+                <Link to="/"className="legal roboto-regular">Política de privacidad</Link>
             </div>
         </div>
     )

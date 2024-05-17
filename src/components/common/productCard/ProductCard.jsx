@@ -32,7 +32,7 @@ const ProductCard = ({title, description, price, img, id}) => {
             <CardActions
             sx={{backgroundColor: "#5d5d5d"}}>
                 <Link to={`/itemDetail/${id}`}>
-                    <Button size="small"sx={{ color:"#f8ff86"}} >Detalles</Button>
+                    <Button size="small"sx={{ color:"#f8ff86"}} variant='contained' >Detalles</Button>
                 </Link>
             </CardActions>
         </Card>

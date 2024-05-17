@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .detail-container{
     display: flex;
     align-items: center;
@@ -24,10 +26,17 @@
 }h2{
     font-size: 2.5rem;
     text-decoration: underline;
+    text-underline-offset: .375rem;
 }h3{
     font-size: 1.5625rem;
 }h4{
     font-size: 1.875rem;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .loader{
@@ -38,4 +47,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.custom-toast {
+    background-color: #202020; 
+}
+
+.custom-toast-body {
+    color: #f8ff86; 
 }

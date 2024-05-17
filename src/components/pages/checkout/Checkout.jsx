@@ -9,13 +9,13 @@ const Checkout = ({handleSubmit, handleChange, orderId}) => {
     return (
         <div className="checkout">
             {orderId ? (<div className="order">
-                    <h4 className="order-text">¡Muchas gracias por su compra!</h4>
-                    <h4 className="order-id">Su orden de compra es: {orderId}</h4>
-                        <h4 className="more-products">¿Desea seguir comprando?</h4>
+                    <h4 className="order-text fugaz-one-regular ">¡Muchas gracias por su compra!</h4>
+                    <h4 className="order-id roboto-regular">Su orden de compra es: {orderId}</h4>
+                        <h4 className="more-products roboto-regular">¿Desea seguir comprando?</h4>
                         <div className="buttom-home"><Link to="/"><Button variant="contained" color="secondary">mas productos</Button></Link></div>
                 </div>) :
             <form onSubmit={handleSubmit} className="form" >
-                <h4 className="checkout-text">Complete el formulario para finalizar la compra:</h4>
+                <h4 className="checkout-text roboto-regular">Complete el formulario para finalizar la compra:</h4>
                 <div className="inputs">
                     <TextField 
                         variant="standard" 

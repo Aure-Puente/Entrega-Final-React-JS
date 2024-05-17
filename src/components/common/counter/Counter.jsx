@@ -15,7 +15,7 @@ const Counter = ({sumar, restar, contador, onAdd}) => {
                     onClick={sumar}>+</Button>
             </div>
             <div className="agregar">
-                <Button color="secondary"variant="outlined"
+                <Button color="secondary"variant="outlined" size="large"
                     onClick={()=>{
                         onAdd(contador)}} >Agregar al Carrito</Button>
             </div>
