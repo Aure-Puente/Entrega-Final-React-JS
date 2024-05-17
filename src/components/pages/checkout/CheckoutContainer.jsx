@@ -11,6 +11,7 @@ const CheckoutContainer = () => {
 
     const {cart, getTotalPrice, clearCart} = useContext(CartContext)
     const [orderId, setOrderId] = useState(null)
+    const [error, SetError] = useState(null)
 
     let total = getTotalPrice()
 
@@ -34,7 +35,7 @@ const CheckoutContainer = () => {
         }
 
         let ordersCollection = collection(db, "orders")
-        addDoc(ordersCollection, obj).then((res)=>setOrderId(res.id))
+        addDoc(ordersCollection, obj).then((res)=>setOrderId(res.id)).catch((err)=>SetError(`Error al actualizar el stock: ${err.message}`))
 
         cart.forEach((product)=>{
             let refDoc = doc(db, "products", product.id)
@@ -44,7 +45,7 @@ const CheckoutContainer = () => {
     }
 
 return (
-    <Checkout handleSubmit={handleSumbit} handleChange={handleChange} orderId={orderId} />
+    <Checkout handleSubmit={handleSumbit} handleChange={handleChange} orderId={orderId} error={error} />
 )
 }
 

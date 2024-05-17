@@ -4,8 +4,9 @@ import "../checkout/CheckoutContainer.css"
 import SendIcon from '@mui/icons-material/Send'
 import { Link } from "react-router-dom"
 
+
 //JSX:
-const Checkout = ({handleSubmit, handleChange, orderId}) => {
+const Checkout = ({handleSubmit, handleChange, orderId, error}) => {
     return (
         <div className="checkout">
             {orderId ? (<div className="order">
@@ -16,6 +17,7 @@ const Checkout = ({handleSubmit, handleChange, orderId}) => {
                 </div>) :
             <form onSubmit={handleSubmit} className="form" >
                 <h4 className="checkout-text roboto-regular">Complete el formulario para finalizar la compra:</h4>
+                
                 <div className="inputs">
                     <TextField 
                         variant="standard" 
@@ -89,6 +91,7 @@ const Checkout = ({handleSubmit, handleChange, orderId}) => {
                     size="large"
                     endIcon={<SendIcon style={{ color: '#3d3d3d' }} />} >Enviar</Button>
             </div>
+            {error && <p style={{ color: '#f8ff86', padding: "30px" }}>{error}</p>}
         </form>
             }
         </div>

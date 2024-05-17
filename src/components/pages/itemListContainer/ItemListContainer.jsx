@@ -11,6 +11,7 @@ import { Skeleton } from "@mui/material"
 const ItemListContainer = () => {
     const [items, setItems] = useState([])
     const {name} = useParams()
+    const [error, setError] = useState(null)
 
     useEffect(()=>{
         const productsCollection = collection(db, "products")
@@ -18,13 +19,21 @@ const ItemListContainer = () => {
         if(name){
             consulta = query(productsCollection, where("category", "==", name))
         }
-        getDocs(consulta).then((res)=>{
-            let newArray = res.docs.map((doc)=>{
-                return {id: doc.id, ...doc.data()}
-            })
-                setItems(newArray)
-        })
+        getDocs(consulta)
+            .then((res) => {
+                let newArray = res.docs.map((doc) => {
+                return { id: doc.id, ...doc.data() };
+        });
+            setItems(newArray);
+    })
+            .catch((err) => {
+                setError(`Error al cargar productos: ${err.message}`);
+    });
     },[name])
+
+    if (error) {
+        return <div style={{ color: 'red', textAlign: 'center', marginTop: '20px' }}>{error}</div>;
+    }
 
     if(items.length ===0){
         return (
@@ -161,7 +170,7 @@ const ItemListContainer = () => {
         )
     }else{
             return (
-        <ItemList items= {items}/>
+        <ItemList items= {items} name={name} />
     )
     }
 

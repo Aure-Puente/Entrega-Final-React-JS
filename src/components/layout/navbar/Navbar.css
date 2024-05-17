@@ -24,6 +24,7 @@
         color: #f8ff86;
         text-decoration: none;
         font-size: 1.875rem;
+        background-color: #f8ff86;
     }
 }
 
@@ -55,4 +56,9 @@
 
 .cart{
     color: white;
+}
+
+.active {
+    font-weight: bold;
+    color: green; /* Cambia el color a tu preferencia */
 }

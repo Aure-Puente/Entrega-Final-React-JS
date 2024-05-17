@@ -14,6 +14,7 @@ import { toast } from 'react-toastify'
 const ItemDetailContainer = () => {
     const {id} = useParams()
     const [item, setItem] = useState({})
+    const [error, setError] = useState(null)
     const {addToCart} = useContext(CartContext)
 
     useEffect(()=>{
@@ -21,7 +22,7 @@ const ItemDetailContainer = () => {
         let refDoc = doc(productsCollection, id)
         getDoc(refDoc).then((res)=>{
             setItem({id: res.id, ...res.data()})
-        })
+        }).catch((err)=>{setError(`Error al cargar los productos: ${err.message}`)})
     },[id])
 
     const onAdd = (cantidad)=>{
@@ -39,6 +40,10 @@ const ItemDetailContainer = () => {
             className: 'custom-toast',
             bodyClassName: 'custom-toast-body'
             });
+    }
+
+    if (error) {
+        return <div style={{ color: 'red', textAlign: 'center', marginTop: '20px' }}>{error}</div>;
     }
 
     if(Object.keys(item).length === 0){
