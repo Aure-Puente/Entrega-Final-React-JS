@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .detail-container{
     display: flex;
     align-items: center;
@@ -7,6 +9,10 @@
     border-style: double;
     padding: 2.5rem;
     padding-left: 9.375rem;
+    height: 39.6875rem;
+}img{
+    border: #f8ff86;
+    border-style: inset;
 }
 
 .details{
@@ -20,16 +26,33 @@
 }h2{
     font-size: 2.5rem;
     text-decoration: underline;
+    text-underline-offset: .375rem;
 }h3{
     font-size: 1.5625rem;
 }h4{
     font-size: 1.875rem;
-}button{
-    font-size: 1.5625rem;
-    background-color: #f8ff86;
-    padding: .5rem;
-    font-family: 'Times New Roman', Times, serif;
-    border-radius: 6.25rem;
-    cursor: pointer;
-    color: #262626;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.loader{
+    background-color: #3d3d3d;
+    height: 39.6875rem;
+    border-top: .125rem #f8ff86;
+    border-style: double;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-toast {
+    background-color: #202020; 
+}
+
+.custom-toast-body {
+    color: #f8ff86; 
 }

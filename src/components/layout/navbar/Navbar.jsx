@@ -1,6 +1,5 @@
 //Importaciones:
 import { CartWidget } from '../../common/cartWidget/CartWidget.jsx';
-import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 import { Link } from 'react-router-dom';
 import "../navbar/Navbar.css"
 
@@ -10,12 +9,9 @@ const Navbar = () => {
     return (
         <div className='navbar-container'>
             <div className='logo'>
-            <Link to="/">            
-                <QueueMusicIcon fontSize='large' color="secondary"sx={{display: { xs: 'none', md: 'flex' }, mr: 1,}}/>
-            </Link>
-            <Link to="/"><h1>GUITAR SHOP</h1></Link>
+                <Link to="/"><h1 className= "fugaz-one-regular">GUITAR SHOP</h1></Link>
             </div>
-            <ul className='navbar'>
+            <ul className='navbar russo-one-regular'>
                 <Link to="/">TODAS</Link>
                 <Link to="category/acústicas">Acústicas</Link>
                 <Link to="category/eléctricas">Eléctricas</Link>

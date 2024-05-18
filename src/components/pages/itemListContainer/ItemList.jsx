@@ -4,7 +4,7 @@ import "../itemListContainer/ItemListContainer.css"
 
 
 //JSX:
-const ItemList = ({items, error}) => {
+const ItemList = ({items}) => {
     return (
         <div className="container">
             {items.map(({id, title, description, price, img})=>{
@@ -18,7 +18,6 @@ const ItemList = ({items, error}) => {
                         img={img} />
                 )
             })}
-            {error && <h2>{error.message}</h2>}
         </div>
     )
 }

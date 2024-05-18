@@ -1,5 +1,7 @@
 //Importaciones:
 import { createContext, useState } from "react";
+import 'react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify'
 
 
 //Lógica:
@@ -34,6 +36,18 @@ const CartContextProvider = ({children}) =>{
     const deleteById = (id)=>{
         let newArray = cart.filter(product => product.id !== id)
         setCart(newArray)
+        toast.info('Producto eliminado del carrito', {
+            position: "top-left",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            className: 'custom-toast',
+            bodyClassName: 'custom-toast-body'
+            });
     }
 
     //Función para corroborar si ya se encuentra el producto en el carrito:
@@ -65,7 +79,7 @@ const CartContextProvider = ({children}) =>{
     }
 
     //Variable que contiene toda la información del contexto:
-    let data = {cart, addToCart, clearCart, deleteById, isInCart ,getQuantityById, getTotalPrice, getTotalItems}
+    let data = {cart, addToCart, clearCart, deleteById, getQuantityById, getTotalPrice, getTotalItems}
 
     return <CartContext.Provider value={data}>{children}</CartContext.Provider>
 }

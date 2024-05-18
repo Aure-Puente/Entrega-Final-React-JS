@@ -1,0 +1,12 @@
+.contador{
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.agregar{
+    display: flex;
+    justify-content: center;
+    padding-top: 1.25rem;
+}
